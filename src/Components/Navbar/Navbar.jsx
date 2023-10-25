@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Navbar.css";
 import Logo from "../../Assets/logo.png";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [lineStyleElement, setLineStyleElement] = useState({
@@ -15,7 +16,12 @@ const Navbar = () => {
     setLineStyleElement({ width: widthValueTarget, left: leftValueTarget });
   };
 
-  const links = ["Shop", "Men", "Women", "Kids"];
+  const links = [
+    { text: "Shop", url: "/" },
+    { text: "Men", url: "/mens" },
+    { text: "Women", url: "/women" },
+    { text: "Kids", url: "/kids" },
+  ];
 
   return (
     <div className="navbar">
@@ -27,13 +33,14 @@ const Navbar = () => {
 
         <ul className="navbar-list">
           {links.map((link, index) => (
-            <li
+            <Link
               key={index}
               className="link"
               onClick={(e) => handleActiveLink(e, index)}
+              to={link.url}
             >
-              {link}
-            </li>
+              {link.text}
+            </Link>
           ))}
           <div
             className="line"
@@ -45,13 +52,17 @@ const Navbar = () => {
         </ul>
 
         <div className="navbar-cta">
-          <button className="btn btn-login">Login</button>
-          <div className="shopping">
-            <div className="logo-shopping">
-              <i className="fa-solid fa-cart-shopping"></i>
+          <Link to={"/login"}>
+            <button className="btn btn-login">Login</button>
+          </Link>
+          <Link to={"/cart"}>
+            <div className="shopping">
+              <div className="logo-shopping">
+                <i className="fa-solid fa-cart-shopping"></i>
+              </div>
+              <div className="count-product">1</div>
             </div>
-            <div className="count-product">1</div>
-          </div>
+          </Link>
         </div>
       </div>
     </div>

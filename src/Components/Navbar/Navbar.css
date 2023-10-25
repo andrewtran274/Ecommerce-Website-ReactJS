@@ -34,6 +34,9 @@
 .navbar .navbar-container .navbar-list .link {
   padding: 10px 20px;
   cursor: pointer;
+  text-decoration: none;
+  color: black;
+  font-weight: 400;
 }
 
 .navbar .navbar-container .navbar-list .line {
@@ -82,13 +85,15 @@
 
 .navbar .navbar-container .navbar-cta .shopping .count-product {
   position: absolute;
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   background-color: red;
   border-radius: 50%;
   text-align: center;
-  line-height: 20px;
+  line-height: 25px;
   font-size: 10px;
-  top: -5px;
-  right: -5px;
+  top: -10px;
+  right: -10px;
+  color: #fff;
+  font-weight: 500;
 }
