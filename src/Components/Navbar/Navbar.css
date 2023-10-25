@@ -1,0 +1,94 @@
+.navbar {
+  padding: 16px;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar .navbar-container .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.navbar .navbar-container .logo .logo-name {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.navbar .navbar-container .navbar-list {
+  position: relative;
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 20px;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.navbar .navbar-container .navbar-list .link {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.navbar .navbar-container .navbar-list .line {
+  position: absolute;
+  height: 3px;
+  width: 86px;
+  background-color: red;
+  bottom: -5px;
+  left: 0;
+  transition: all 0.3s ease-in-out;
+  border-radius: 20px;
+}
+
+.navbar .navbar-container .navbar-cta {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar .navbar-container .navbar-cta .btn {
+  border: 1px solid black;
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: 400;
+  background-color: transparent;
+  min-width: 100px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.navbar .navbar-container .navbar-cta .btn:hover {
+  background-color: #ececec;
+}
+
+.navbar .navbar-container .navbar-cta .shopping {
+  position: relative;
+  cursor: pointer;
+}
+
+.navbar .navbar-container .navbar-cta .shopping .logo-shopping {
+  font-size: 30px;
+  cursor: pointer;
+  color: #3c3c3c;
+}
+
+.navbar .navbar-container .navbar-cta .shopping .count-product {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 20px;
+  font-size: 10px;
+  top: -5px;
+  right: -5px;
+}
