@@ -1,0 +1,30 @@
+.popular {
+  height: 100vh;
+}
+
+.popular-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.popular-container .heading {
+  font-size: 50px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.popular-container .line {
+  width: 150px;
+  height: 5px;
+  background-color: rgb(26, 26, 26);
+  border-radius: 20px;
+  margin-bottom: 50px;
+}
+
+.popular-product {
+  display: flex;
+  gap: 30px;
+}
