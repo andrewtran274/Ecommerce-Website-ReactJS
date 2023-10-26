@@ -16,7 +16,7 @@ const Hero = () => {
           </div>
 
           <button className="btn btn-cta">
-            Lastest Collection<i class="fa-solid fa-arrow-right-long"></i>
+            Lastest Collection<i className="fa-solid fa-arrow-right-long"></i>
           </button>
         </div>
 

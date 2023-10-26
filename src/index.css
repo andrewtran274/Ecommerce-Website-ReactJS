@@ -12,3 +12,9 @@
   max-width: calc(100% - 50px);
   margin: 0 auto;
 }
+
+.line {
+  width: 200px;
+  height: 10px;
+  background-color: red;
+}

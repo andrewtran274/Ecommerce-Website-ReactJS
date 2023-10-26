@@ -1,0 +1,31 @@
+.newcollections {
+  min-height: 100vh;
+  display: flex;
+}
+
+.container-newcollections {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.container-newcollections .heading {
+  font-size: 50px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.newcollections .container-newcollections .line {
+  width: 200px;
+  height: 5px;
+  background-color: #000;
+  margin-bottom: 40px;
+  border-radius: 20px;
+}
+
+.container-newcollections .product-collections {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 30px;
+}
