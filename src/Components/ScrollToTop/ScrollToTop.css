@@ -1,0 +1,24 @@
+.scroll-to-top {
+  width: 40px;
+  height: 40px;
+  /* background-color: red; */
+  border-radius: 50%;
+  position: fixed;
+  bottom: 60px;
+  right: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+
+.scroll-to-top i {
+  transition: all 0.3s ease-in-out;
+  transform: scale(0.9);
+}
+
+.scroll-to-top:hover i {
+  transform: translateY(-5px) scale(1);
+}
