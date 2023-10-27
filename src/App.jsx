@@ -38,7 +38,14 @@ const App = () => {
             <Route path=":productId" element={<Product />} />
           </Route>
           <Route path="/cart" element={<Cart />} />
-          <Route path="/login" element={<LoginSignup />} />
+          <Route
+            path="/login"
+            element={<LoginSignup isLoginOrSignUp="login" />}
+          />
+          <Route
+            path="/signup"
+            element={<LoginSignup isLoginOrSignUp="signup" />}
+          />
         </Routes>
         <Footer />
         <ScrollToTop />

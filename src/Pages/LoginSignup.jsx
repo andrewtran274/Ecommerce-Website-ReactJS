@@ -1,18 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./CSS/LoginSignup.css";
 
-const LoginSignup = () => {
+const LoginSignup = ({ isLoginOrSignUp }) => {
+  const [isLogin, setIsLogin] = useState(false);
+
+  const isLoginOrSignupFunc = () => {
+    if (isLoginOrSignUp === "login") {
+      setIsLogin(false);
+    } else {
+      setIsLogin(true);
+    }
+  };
+  useEffect(() => {
+    isLoginOrSignupFunc();
+  }, []);
+
   return (
     <div className="loginSignup">
       <div className="loginSignupForm">
-        <div className="heading">Sign Up</div>
+        <div className="heading">{isLogin ? "Sign Up" : "Login"}</div>
 
         <input type="text" className="userName" placeholder="Enter your name" />
-        <input
-          type="email"
-          className="userEmail"
-          placeholder="Enter your email"
-        />
+        {isLogin && (
+          <input
+            type="email"
+            className="userEmail"
+            placeholder="Enter your email"
+          />
+        )}
         <input
           type="text"
           className="userPassword"
@@ -21,19 +36,28 @@ const LoginSignup = () => {
 
         <button className="btn btn-signUpLogin">Continue</button>
 
-        <p className="subText">
-          <span> Alrealy have an account? </span>
-          <span>Login here</span>
-        </p>
-
-        <div className="acceptPolicy">
-          <div className="check">
-            <input type="checkbox" className="checkbox" />
-          </div>
-          <p className="contentPolicy">
-            By continuing i agree to the terms of use & privacy policy.
+        {isLogin ? (
+          <p className="subText">
+            <span> Alrealy have an account? </span>
+            <span>Login here</span>
           </p>
-        </div>
+        ) : (
+          <p className="subText">
+            <span> Forgot your password? </span>
+            <span>Click here</span>
+          </p>
+        )}
+
+        {isLogin && (
+          <div className="acceptPolicy">
+            <div className="check">
+              <input type="checkbox" className="checkbox" />
+            </div>
+            <p className="contentPolicy">
+              By continuing i agree to the terms of use & privacy policy.
+            </p>
+          </div>
+        )}
       </div>
     </div>
   );

@@ -4,6 +4,8 @@ import Logo from "../../Assets/logo.png";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  const [isLogin, setIsLogin] = useState(false);
+
   const [lineStyleElement, setLineStyleElement] = useState({
     width: 86,
     left: 0,
@@ -52,8 +54,13 @@ const Navbar = () => {
         </ul>
 
         <div className="navbar-cta">
-          <Link to={"/login"}>
-            <button className="btn btn-login">Login</button>
+          <Link
+            to={`${isLogin ? "/signup" : "/login"}`}
+            onClick={() => setIsLogin((prev) => !prev)}
+          >
+            <button className="btn btn-login">
+              {isLogin ? "Sign Up" : "Login"}
+            </button>
           </Link>
           <Link to={"/cart"}>
             <div className="shopping">
