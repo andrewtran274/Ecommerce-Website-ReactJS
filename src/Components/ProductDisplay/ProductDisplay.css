@@ -1,0 +1,152 @@
+.productdisplay {
+  margin-top: 50px;
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+  /* background-color: red; */
+}
+
+.productDisplay-left {
+  display: flex;
+  flex: 1;
+  gap: 20px;
+}
+
+.productDisplay-left .productDisplay-listImage {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.productDisplay-left .productDisplay-listImage img {
+  width: 120px;
+  flex: 1;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.productDisplay-left .productDisplay-listImage img:hover {
+  transform: scale(1.1);
+}
+
+.productDisplay-left .productDisplay-MainImage {
+  width: 100%;
+  cursor: pointer;
+}
+
+.productDisplay-left .productDisplay-MainImage img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.productDisplay-right {
+  flex: 1;
+  height: 100%;
+  padding-top: 20px;
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+  /* background-color: black; */
+  height: 100%;
+}
+
+.productDisplay-right .title {
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.productDisplay-right .listStar {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 5px;
+  color: rgb(227, 227, 7);
+}
+
+.productDisplay-right .listStar i {
+  cursor: pointer;
+}
+
+.productDisplay-right .listStar i:last-child {
+  opacity: 0.2;
+}
+
+.productDisplay-right .group-price {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.productDisplay-right .group-price .old-price {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.productDisplay-right .group-price .new-price {
+  color: red;
+}
+
+.productDisplay-right .describe-product {
+  font-size: 18px;
+  opacity: 0.7;
+  margin-bottom: 30px;
+}
+
+.select-size-title {
+  margin-bottom: 30px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.group-size {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.group-size .size {
+  width: 60px;
+  height: 60px;
+  background-color: #ebebeb;
+  line-height: 60px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 20px;
+  transition: 0.3s ease;
+  margin-bottom: 30px;
+}
+
+.group-size .size:hover {
+  background-color: rgb(206, 206, 206);
+}
+
+.btn-addToCart {
+  width: 250px;
+  padding: 16px 26px;
+  border: none;
+  font-size: 17px;
+  font-weight: 500;
+  background-color: rgb(255, 63, 63);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-addToCart:hover {
+  background-color: rgb(255, 110, 110);
+}
+
+.tagNameProduct {
+  font-size: 17px;
+  margin-top: auto;
+  flex: 1 0 auto;
+  margin-top: 50px;
+}
+
+.tagNameProduct span {
+  font-weight: 500;
+}
