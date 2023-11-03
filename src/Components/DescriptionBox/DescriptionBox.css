@@ -1,0 +1,29 @@
+.descriptionbox {
+  margin-top: 100px;
+}
+
+.information {
+  display: flex;
+  align-items: center;
+}
+
+.description,
+.reviews {
+  padding: 14px 26px;
+  border: 1px solid #ccc;
+  font-weight: 500;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.description:hover,
+.reviews:hover {
+  background-color: #dddddd;
+}
+
+.des {
+  padding: 40px;
+  opacity: 0.7;
+  border: 1px solid #a6a6a6;
+}
