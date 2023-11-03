@@ -19,6 +19,11 @@
 .navbar .navbar-container .logo .logo-name {
   font-size: 30px;
   font-weight: 500;
+  color: rgb(255, 93, 93);
+}
+
+.navbar .navbar-container .logo .logo-name span {
+  color: rgb(253, 207, 0);
 }
 
 .navbar .navbar-container .navbar-list {

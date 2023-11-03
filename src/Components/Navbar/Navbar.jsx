@@ -1,21 +1,32 @@
 import React, { useState } from "react";
 import "./Navbar.css";
 import Logo from "../../Assets/logo.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isLogin, setIsLogin] = useState(false);
 
+  const navigate = useNavigate();
   const [lineStyleElement, setLineStyleElement] = useState({
     width: 86,
     left: 0,
   });
 
-  const handleActiveLink = (e, index) => {
+  const handleActiveLink = (e) => {
     let widthValueTarget = e.target.offsetWidth;
     let leftValueTarget = e.target.offsetLeft;
 
     setLineStyleElement({ width: widthValueTarget, left: leftValueTarget });
+  };
+
+  const toggleLoginState = () => {
+    setIsLogin((prev) => !prev);
+
+    if (isLogin) {
+      navigate("/signup");
+    } else {
+      navigate("/login");
+    }
   };
 
   const links = [
@@ -25,12 +36,23 @@ const Navbar = () => {
     { text: "Kids", url: "/kids" },
   ];
 
+  const handleLogoClick = () => {
+    // Điều hướng về trang mặc định
+    navigate("/");
+    handleActiveLink({
+      target: document.querySelector(".link"),
+      offsetLeft: 0,
+    });
+  };
+
   return (
     <div className="navbar">
       <div className="container navbar-container">
-        <div className="logo">
+        <div className="logo" onClick={handleLogoClick}>
           <img src={Logo} alt="" className="logo-img" />
-          <h1 className="logo-name">SHOPPER</h1>
+          <h1 className="logo-name">
+            SHOP<span>PER</span>
+          </h1>
         </div>
 
         <ul className="navbar-list">
@@ -54,14 +76,10 @@ const Navbar = () => {
         </ul>
 
         <div className="navbar-cta">
-          <Link
-            to={`${isLogin ? "/signup" : "/login"}`}
-            onClick={() => setIsLogin((prev) => !prev)}
-          >
-            <button className="btn btn-login">
-              {isLogin ? "Sign Up" : "Login"}
-            </button>
-          </Link>
+          <button className="btn btn-login" onClick={toggleLoginState}>
+            {isLogin ? "Sign Up" : "Login"}
+          </button>
+
           <Link to={"/cart"}>
             <div className="shopping">
               <div className="logo-shopping">

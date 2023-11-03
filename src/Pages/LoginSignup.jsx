@@ -1,19 +1,15 @@
 import React, { useEffect, useState } from "react";
 import "./CSS/LoginSignup.css";
+import { useLocation } from "react-router-dom";
 
-const LoginSignup = ({ isLoginOrSignUp }) => {
-  const [isLogin, setIsLogin] = useState(false);
+const LoginSignup = () => {
+  const location = useLocation();
 
-  const isLoginOrSignupFunc = () => {
-    if (isLoginOrSignUp === "login") {
-      setIsLogin(false);
-    } else {
-      setIsLogin(true);
-    }
-  };
+  const [isLogin, setIsLogin] = useState(location.pathname === "/signup");
+
   useEffect(() => {
-    isLoginOrSignupFunc();
-  }, []);
+    setIsLogin(location.pathname === "/signup");
+  }, [location.pathname]);
 
   return (
     <div className="loginSignup">
