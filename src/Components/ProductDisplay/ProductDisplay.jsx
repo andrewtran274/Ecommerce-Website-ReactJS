@@ -54,6 +54,7 @@ const ProductDisplay = ({ product }) => {
         <div className="group-size">
           {["S", "M", "L", "XL", "XXL"].map((size) => (
             <div
+              key={size}
               className={`size ${selectedSize === size ? "active" : ""}`}
               onClick={() => setSelectedSize(size)}
             >

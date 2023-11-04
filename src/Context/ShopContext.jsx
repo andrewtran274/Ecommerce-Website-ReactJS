@@ -63,7 +63,7 @@ export function ShopContextPrivider({ children }) {
   //tinh tong cac san pham trong CART
   const totalQuantityInCart = () => {
     const totalQuantity = cart.reduce((total, cartItem) => {
-      total + cartItem.quantity;
+      return total + cartItem.quantity;
     }, 0);
 
     return totalQuantity;
@@ -73,7 +73,7 @@ export function ShopContextPrivider({ children }) {
 
   const calculateTotalPriceInCart = () => {
     const totalQuantity = cart.reduce((total, cartItem) => {
-      total + cartItem.new_price * cartItem.quantity;
+      return total + cartItem.new_price * cartItem.quantity;
     }, 0);
 
     return totalQuantity;

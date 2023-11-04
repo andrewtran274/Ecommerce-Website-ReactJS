@@ -8,6 +8,8 @@ const Navbar = () => {
   const [isLogin, setIsLogin] = useState(false);
   const { totalQuantityInCart } = useShopContext();
 
+  const totalQuantity = totalQuantityInCart();
+
   const navigate = useNavigate();
   const [lineStyleElement, setLineStyleElement] = useState({
     width: 86,
@@ -87,7 +89,12 @@ const Navbar = () => {
               <div className="logo-shopping">
                 <i className="fa-solid fa-cart-shopping"></i>
               </div>
-              <div className="count-product">{totalQuantityInCart()}</div>
+              <div
+                className="count-product"
+                style={{ display: `${totalQuantity ? "block" : "none"}` }}
+              >
+                {totalQuantity}
+              </div>
             </div>
           </Link>
         </div>
