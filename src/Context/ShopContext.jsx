@@ -11,15 +11,15 @@ export function ShopContextPrivider({ children }) {
   const AllProducts = All_Product;
   const [cart, setCart] = useState([]);
 
-  const addToCart = (productId) => {
+  const addToCart = (product) => {
     //Kiem tra san pham da co trong Cart hay chua
-    const existingProduct = cart.find((product) => product.id === productId);
+    const existingProduct = cart.find((prod) => prod.id === product.id);
 
     if (existingProduct) {
       //Neu da ton tai trong Cart thi Cap nhap Quantity len + 1
       setCart((prevCart) => {
         prevCart.map((product) => {
-          product.id === productId
+          product.id === product.id
             ? { ...product, quantity: product.quantity + 1 }
             : product;
         });
@@ -27,7 +27,7 @@ export function ShopContextPrivider({ children }) {
     } else {
       //Khong co tien hanh lay ra thong tin san pham va them vao CART
       const productToCart = AllProducts.find(
-        (product) => product.id === productId
+        (product) => product.id === product.id
       );
 
       if (productToCart) {

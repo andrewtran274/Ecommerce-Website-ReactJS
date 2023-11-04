@@ -120,6 +120,11 @@
   margin-bottom: 30px;
 }
 
+.group-size .size.active {
+  outline: 2px solid black;
+  transition: unset;
+}
+
 .group-size .size:hover {
   background-color: rgb(206, 206, 206);
 }
@@ -134,6 +139,11 @@
   color: #fff;
   cursor: pointer;
   transition: all 0.3s ease;
+}
+
+.btn-addToCart.disabled {
+  opacity: 0.5;
+  pointer-events: none;
 }
 
 .btn-addToCart:hover {

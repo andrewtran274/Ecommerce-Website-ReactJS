@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./ProductDisplay.css";
 import { useShopContext } from "../../context/ShopContext";
 
 const ProductDisplay = ({ product }) => {
+  const [selectedSize, setSelectedSize] = useState(null);
+
   const { addToCart } = useShopContext();
+
+  const handleAddToCart = () => {
+    addToCart({ ...product, size: selectedSize });
+  };
+
+  useEffect(() => {
+    setSelectedSize(null);
+  }, [product]);
+
   return (
     <div className="productdisplay">
       <div className="productDisplay-left">
@@ -41,14 +52,22 @@ const ProductDisplay = ({ product }) => {
         <div className="select-size-title">Select Size</div>
 
         <div className="group-size">
-          <div className="size">S</div>
-          <div className="size">M</div>
-          <div className="size">L</div>
-          <div className="size">XL</div>
-          <div className="size">XXL</div>
+          {["S", "M", "L", "XL", "XXL"].map((size) => (
+            <div
+              className={`size ${selectedSize === size ? "active" : ""}`}
+              onClick={() => setSelectedSize(size)}
+            >
+              {size}
+            </div>
+          ))}
         </div>
 
-        <button className="btn btn-addToCart">ADD TO CART</button>
+        <button
+          className={`btn btn-addToCart ${selectedSize ? "" : "disabled"}`}
+          onClick={() => handleAddToCart()}
+        >
+          ADD TO CART
+        </button>
 
         <div className="tagNameProduct">
           <span>Category</span>: Women, T-Shirt, Crop-Top <br />
