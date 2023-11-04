@@ -8,7 +8,9 @@ const ProductDisplay = ({ product }) => {
   const { addToCart } = useShopContext();
 
   const handleAddToCart = () => {
-    addToCart({ ...product, size: selectedSize });
+    if (selectedSize) {
+      addToCart({ ...product, size: selectedSize });
+    }
   };
 
   useEffect(() => {
@@ -65,7 +67,7 @@ const ProductDisplay = ({ product }) => {
 
         <button
           className={`btn btn-addToCart ${selectedSize ? "" : "disabled"}`}
-          onClick={() => handleAddToCart()}
+          onClick={handleAddToCart}
         >
           ADD TO CART
         </button>

@@ -2,7 +2,6 @@ import React from "react";
 import "./Breadcums.css";
 
 const Breadcums = ({ product }) => {
-  console.log(product);
   return (
     <div className="breadcums">
       HOME <i className="fa-solid fa-chevron-right"></i>

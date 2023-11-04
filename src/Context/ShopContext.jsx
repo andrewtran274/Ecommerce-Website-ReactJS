@@ -12,26 +12,27 @@ export function ShopContextPrivider({ children }) {
   const [cart, setCart] = useState([]);
 
   const addToCart = (product) => {
-    //Kiem tra san pham da co trong Cart hay chua
+    // Kiểm tra sản phẩm đã có trong Cart hay chưa
     const existingProduct = cart.find((prod) => prod.id === product.id);
 
     if (existingProduct) {
-      //Neu da ton tai trong Cart thi Cap nhap Quantity len + 1
+      // Nếu đã tồn tại trong Cart thì cập nhật Quantity lên + 1
       setCart((prevCart) => {
-        prevCart.map((product) => {
-          product.id === product.id
-            ? { ...product, quantity: product.quantity + 1 }
-            : product;
-        });
+        return prevCart.map((cartItem) =>
+          cartItem.id === product.id
+            ? { ...cartItem, quantity: cartItem.quantity + 1 }
+            : cartItem
+        );
       });
     } else {
-      //Khong co tien hanh lay ra thong tin san pham va them vao CART
-      const productToCart = AllProducts.find(
-        (product) => product.id === product.id
-      );
+      // Không tồn tại thì lấy thông tin sản phẩm và thêm vào CART
+      const productToCart = AllProducts.find((prod) => prod.id === product.id);
 
       if (productToCart) {
-        setCart((prevCart) => [...prevCart, { productToCart, quantity: 1 }]);
+        setCart((prevCart) => [
+          ...prevCart,
+          { ...productToCart, quantity: 1, size: product.size },
+        ]);
       }
     }
   };
@@ -44,20 +45,21 @@ export function ShopContextPrivider({ children }) {
           return { ...cartItem, quantity: cartItem.quantity - 1 };
         } else {
           deleteFromCart(productId);
+          return null;
         }
       } else {
         return cartItem;
       }
     });
+
+    const filteredCart = updateCart.filter((item) => item !== null);
+    setCart(filteredCart);
   };
 
   //Xoa san pham cua CART
   const deleteFromCart = (productId) => {
-    const updateCart = cart.filter((cartItem) => {
-      cartItem.id !== productId;
-    });
-
-    setCart(updateCart);
+    const updatedCart = cart.filter((cartItem) => cartItem.id !== productId);
+    setCart(updatedCart);
   };
 
   //tinh tong cac san pham trong CART
@@ -83,6 +85,7 @@ export function ShopContextPrivider({ children }) {
     <shopContext.Provider
       value={{
         AllProducts,
+        cart,
         addToCart,
         totalQuantityInCart,
         removeFromCart,

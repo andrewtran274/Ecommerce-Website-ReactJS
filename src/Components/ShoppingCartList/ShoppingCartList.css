@@ -1,0 +1,88 @@
+.shoppingcart-row {
+  display: grid;
+  grid-template-columns: 3fr 1fr 2fr 1fr 1fr;
+  gap: 20px;
+  border-bottom: 2px solid #ccc;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.shoppingcart-row .title {
+  font-size: 20px;
+  font-weight: 500;
+  opacity: 0.8;
+  pointer-events: none;
+  padding: 30px 0;
+}
+
+.shoppingcart-row .title:first-child,
+.shoppingcart-row .title:last-child,
+.shoppingcart-row .title:nth-child(4) {
+  text-align: center;
+}
+
+.row-cartItem .remove {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.row-cartItem .box {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+}
+
+.row-cartItem .box:nth-child(5),
+.row-cartItem .box:nth-child(4) {
+  margin: auto;
+}
+
+.row-cartItem .quantity {
+  display: flex;
+}
+
+.shoppingcart-row .btn {
+  cursor: pointer;
+  font-size: 18px;
+  background-color: #bbbbbb;
+  transition: all 0.3s ease;
+}
+
+.inforproduct {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.inforproduct .product-name p:first-child {
+  font-size: 15px;
+}
+
+.inforproduct .product-name p:last-child {
+  font-size: 10px;
+}
+
+.inforproduct img {
+  width: 70px;
+}
+
+.priceNumber {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.quantity .box.number {
+  font-style: 20px;
+  font-weight: 500;
+}
+
+.quantity .btn {
+  font-size: 25px;
+}
+
+.row-cartItem .btn:hover {
+  background-color: #cacaca;
+}

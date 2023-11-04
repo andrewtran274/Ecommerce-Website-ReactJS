@@ -1,0 +1,47 @@
+.myshopping-cart {
+  padding: 0 50px 50px;
+  background-color: #fff;
+  width: 100%;
+}
+
+.cart {
+  background-color: #dcdcdc;
+  height: 100vh;
+  padding: 50px;
+}
+
+.container-cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.container-cart .heading {
+  text-align: center;
+  margin-bottom: 50px;
+  /* opacity: 0.8; */
+  pointer-events: none;
+  color: rgb(247, 39, 39);
+}
+
+.boxPrices {
+  display: flex;
+  margin-top: 50px;
+  gap: 40px;
+}
+
+.boxPrice {
+  flex: 1;
+  text-align: center;
+  border: 2px solid #ccc;
+  padding: 20px 26px;
+  font-size: 18px;
+}
+
+.boxPrice span {
+  font-size: 20px;
+  font-weight: 500;
+  margin-left: 30px;
+}
