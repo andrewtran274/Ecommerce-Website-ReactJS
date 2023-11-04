@@ -1,7 +1,9 @@
 import React from "react";
 import "./ProductDisplay.css";
+import { useShopContext } from "../../context/ShopContext";
 
 const ProductDisplay = ({ product }) => {
+  const { addToCart } = useShopContext();
   return (
     <div className="productdisplay">
       <div className="productDisplay-left">

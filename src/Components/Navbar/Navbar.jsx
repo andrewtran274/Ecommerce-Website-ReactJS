@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import "./Navbar.css";
 import Logo from "../../Assets/logo.png";
 import { Link, useNavigate } from "react-router-dom";
+import { useShopContext } from "../../context/ShopContext";
 
 const Navbar = () => {
   const [isLogin, setIsLogin] = useState(false);
+  const { totalQuantityInCart } = useShopContext();
 
   const navigate = useNavigate();
   const [lineStyleElement, setLineStyleElement] = useState({
@@ -85,7 +87,7 @@ const Navbar = () => {
               <div className="logo-shopping">
                 <i className="fa-solid fa-cart-shopping"></i>
               </div>
-              <div className="count-product">1</div>
+              <div className="count-product">{totalQuantityInCart()}</div>
             </div>
           </Link>
         </div>
